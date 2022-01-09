@@ -31,6 +31,7 @@ export default {
     },
     noticeInputAndNumber() {
       this.count += 1;
+      // eslint-disable-next-line
       alert(`${this.message} ${this.count}`);
     },
   },
