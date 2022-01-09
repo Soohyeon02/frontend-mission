@@ -6,6 +6,7 @@
   <router-view/>
   <div id="app">
   <input v-model="message">
+  <button @click="changeInput">제출</button>
   <p>{{ message }}</p>
   </div>
 </template>
@@ -16,7 +17,16 @@ export default {
   data() {
     return {
       message: '',
+      arr: [],
     };
+  },
+  methods: {
+    changeInput() {
+      this.message = this.message.split('');
+      this.arr = this.message.shift();
+      this.message.push(this.arr);
+      this.message = this.message.join('');
+    },
   },
 };
 </script>
