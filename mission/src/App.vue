@@ -19,6 +19,7 @@ export default {
     return {
       message: '',
       arr: [],
+      count: 0,
     };
   },
   methods: {
@@ -29,7 +30,8 @@ export default {
       this.message = this.message.join('');
     },
     noticeInputAndNumber() {
-      alert(this.message);
+      this.count += 1;
+      alert(`${this.message} ${this.count}`);
     },
   },
 };
