@@ -7,6 +7,7 @@
   <div id="app">
   <input v-model="message">
   <button @click="changeInput">제출</button>
+  <button @click="noticeInputAndNumber">알림</button>
   <p>{{ message }}</p>
   </div>
 </template>
@@ -26,6 +27,9 @@ export default {
       this.arr = this.message.shift();
       this.message.push(this.arr);
       this.message = this.message.join('');
+    },
+    noticeInputAndNumber() {
+      alert(this.message);
     },
   },
 };
