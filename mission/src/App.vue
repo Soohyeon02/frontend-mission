@@ -4,7 +4,22 @@
     <router-link to="/about">About</router-link>
   </div>
   <router-view/>
+  <div id="app">
+  <input v-model="message">
+  <p>{{ message }}</p>
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'app',
+  data() {
+    return {
+      message: '',
+    };
+  },
+};
+</script>
 
 <style>
 #app {
