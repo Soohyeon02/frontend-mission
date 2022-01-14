@@ -24,10 +24,7 @@ export default {
   },
   methods: {
     changeInput() {
-      this.message = this.message.split('');
-      this.arr = this.message.shift();
-      this.message.push(this.arr);
-      this.message = this.message.join('');
+      this.message = this.message.slice(1) + this.message.slice(0, 1);
     },
     noticeInputAndNumber() {
       this.count += 1;
