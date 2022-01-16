@@ -10,4 +10,10 @@
   text-align: center;
   color: #2c3e50;
 }
+body {
+  max-width: 375px;
+  width: 375px;
+  display: block;
+  margin: 0px;
+}
 </style>
