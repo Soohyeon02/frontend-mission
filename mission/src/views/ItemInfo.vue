@@ -59,6 +59,10 @@
       <span class="reviewMessage2">{{ reviewMessage2 }}</span>
     </div>
   </div>
+  <br><br>
+  <div class="footer">
+    <button class="buyBotton">{{ price }}원</button>
+  </div>
 </div>
 </template>
 
@@ -231,5 +235,16 @@ export default {
 }
 .reviewMessage2 {
   font-size: 10px;
+}
+.footer {
+  position: fixed;
+  background-color: gray;
+  left: 0px;
+  right: 0px;
+  top: 657px;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+  text-align: center;
 }
 </style>
