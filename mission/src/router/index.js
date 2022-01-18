@@ -1,19 +1,12 @@
+
 import { createRouter, createWebHistory } from 'vue-router';
-<<<<<<< HEAD
-import ItemInfoPage from '@/views/ItemInfo.vue';
-=======
-import ItemInfo from '../views/ItemInfo.vue';
->>>>>>> develop
+import ItemListPage from '@/views/ItemList.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-<<<<<<< HEAD
-    component: ItemInfoPage,
-=======
-    component: ItemInfo,
->>>>>>> develop
+    component: ItemListPage,
   },
   {
     path: '/about',
