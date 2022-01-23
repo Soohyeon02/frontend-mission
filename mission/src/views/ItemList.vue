@@ -1,5 +1,8 @@
 <template>
   <div id="item-list-page">
+    <div class="navbar" :class="{ 'navbar--hidden': !showNavbar }" >
+      <h3>{{ shopName }}</h3>
+    </div>
     <footer class="footer">
       <button class="footerHomeButton">
         <img class="homeButtonImg" src="@/assets/homeButtonImg.png">
@@ -26,7 +29,29 @@ export default {
   name: 'ItemListPage',
   data() {
     return {
+      showNavbar: true,
+      lastScrollPosition: 0,
+      shopName: '뚜뚜샵',
     };
+  },
+  methods: {
+    onScroll() {
+      const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScrollPosition < 0) {
+        return;
+      }
+      if (Math.abs(currentScrollPosition - this.lastScrollPostion) < 60) {
+        return;
+      }
+      this.showNavbar = currentScrollPosition < this.lastScrollPosition;
+      this.lastScrollPosition = currentScrollPosition;
+    },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.onScroll);
+  },
+  berforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll);
   },
 };
 </script>
@@ -34,6 +59,19 @@ export default {
 <style>
 #item-list-page {
   max-width: 375px;
+}
+.navbar {
+  height: 60px;
+  width: 375px;
+  position: fixed;
+  transform: translate3d(0, 0, 0);
+  transition: 1s all ease-out;
+  background-color: rgb(241, 241, 241);
+}
+.navbar.navbar--hidden {
+  box-shadow: none;
+  transform: translate3d(0, -100%, 0);
+  background-color: rgb(241, 241, 241);
 }
 .footer {
   position: fixed;
